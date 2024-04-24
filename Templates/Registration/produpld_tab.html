@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {  border-collapse: collapse;
+          width: 100%;  }
+      
+        th,
+        td {  border: 1px solid #ddd;
+          padding: 8px;
+          text-align: left;
+        }
+      
+        th {  background-color: #f2f2f2;
+          font-weight: bold;
+        }
+      </style>
+      
+</head>
+<body>
+    
+</body>
+</html>
+
+<table>
+    <thead>
+      <tr>
+        <th>PRODUCT ID</th>
+        <th>CATEGORY</th>
+        <th>QUANTITY</th>
+        <th>PRICE</th>
+        <th>DESCRIPTION</th>
+        <th>USER ID</th>
+        <th>DATE</th>
+        <th>MODIFY</th>
+        <th>DELETE</th>
+        
+        </tr>
+    </thead>
+    <tbody>
+      {% for item in data %}
+      <tr>
+        <td>{{ item.product_id }}</td>  
+        <td>{{ item.category }}</td>
+        <td>{{ item.quantity }}</td>  
+        <td>${{ item.price }}</td>
+        <td>{{ item.description }}</td>  
+        <td>{{ item.user_id }}</td>
+        <td>{{ item.date }}</td>  
+        <td><a class= "nav-link"  href="{%  url 'modify_product_table' item.product_id %}">Mod</a></td>
+        <td><a class= "nav-link"  href="{%  url 'delete_product_table' item.product_id %}">Del</a></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  
+
+
+  

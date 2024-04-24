@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-6 mx-auto">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="Login">
+        </form>
+     <a class="nav-link" href="{% url 'reset_password' %}">Forgot Password?</a>
+    </div>
+
+
+</div>
+{% endblock %}
